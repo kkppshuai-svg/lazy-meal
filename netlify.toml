@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build:netlify"
+  publish = "dist-netlify"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[[redirects]]
+  from = "/account"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
